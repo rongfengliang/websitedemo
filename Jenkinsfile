@@ -13,6 +13,11 @@ pipeline {
             sh 'echo "npm install"'
           }
         }
+        stage('testt') {
+          steps {
+            sh 'echo "test"'
+          }
+        }
       }
     }
     stage('deploy') {
