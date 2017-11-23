@@ -2,8 +2,17 @@ pipeline {
   agent any
   stages {
     stage('maven build') {
-      steps {
-        sh 'echo "maven build app"'
+      parallel {
+        stage('maven build') {
+          steps {
+            sh 'echo "maven build app"'
+          }
+        }
+        stage('npm install') {
+          steps {
+            sh 'echo "npm install"'
+          }
+        }
       }
     }
   }
