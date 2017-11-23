@@ -15,6 +15,11 @@ pipeline {
         }
       }
     }
+    stage('Test') {
+            steps {
+                sh 'run test'
+            }
+     }
     stage('deploy') {
       steps {
         sh 'echo "deploy"'
